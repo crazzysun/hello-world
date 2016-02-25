@@ -4,6 +4,9 @@ PGMongo experimental driver
 
 An experimental driver that makes a PostgreSQL database appear like a MongoDB database to its customers.
 
+
+
+
 Move data from mongoDB to PostgreSQL:
 -------------------------------------
 
@@ -28,7 +31,12 @@ Move data from mongoDB to PostgreSQL:
 
 Usage
 -----
-		java -jar pgmongo.jar
+###### Build jar
+
+		mvn assembly:assembly
+
+###### Run
+		java -jar target/pgmongo.jar
 
 1. Connect to PostgreSQL DB:
 
@@ -79,8 +87,10 @@ Supported operators
 System requirements
 -------------------
 
-Java SE Runtime Environment 8
-
+- Java SE Runtime Environment 8 or later;
+- Java SE Development Kit 8 or later;
+- Maven 3.3 or later;
+- PostgresSQL 9.4 or later.
 
 
 
