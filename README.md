@@ -1,32 +1,8 @@
 PGMongo experimental driver
 ===========================
+[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 
 An experimental driver that makes a PostgreSQL database appear like a MongoDB database to its customers.
-
-
-
-Usage
------
-		java -jar pgmongo.jar
-
-1. Connect to PostgreSQL DB:
-
-		connect -u [user name] -p [password] -url [url_to_db] -debug
-			Options:
-		-u			user name
-		-p			password
-		-url		url to db
-		-debug		debug mod on
-			
-			
-2. Write requests:
-
-		db.[collection_name].[query_name]([query_json]);
-
-3. ...
-
-4. PROFIT!
-
 
 Move data from mongoDB to PostgreSQL:
 -------------------------------------
@@ -49,5 +25,50 @@ Move data from mongoDB to PostgreSQL:
 		alter table [table_name] add column _id text;
 		update [table_name] set _id = json_data->[json_path_to_id]->'_id';
 		alter table [table_name] add primary key (_id);    
+
+Usage
+-----
+		java -jar pgmongo.jar
+
+1. Connect to PostgreSQL DB:
+
+		connect -u [user name] -p [password] -url [url_to_db] -debug
+		    Options:
+		-u			user name
+		-p			password
+		-url		url to db
+		-debug		debug mod on
+			
+			
+2. Write requests:
+
+		db.[collection_name].[query_name]([query_json]);
+
+3. ...
+
+4. PROFIT!
+
+
+Supported operators
+-------------------
+
+##### Comparison:
+
+    $gt		>
+    $gte	>=
+    $lt		<
+    $lte	<=
+    $ne		<>
+    $eq		=
+    $in		IN
+    $nin	NOT IN
+
+##### Logical:
+
+    $or 	OR
+    $and 	AND
+    $not 	NOT
+    $nor 	NOT(... OR ...)
+
 
 
