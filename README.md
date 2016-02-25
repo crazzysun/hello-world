@@ -48,6 +48,12 @@ Usage
 
 4. PROFIT!
 
+Supported requests:
+-------------------
+
+	find
+	insert
+	delete
 
 Supported operators
 -------------------
@@ -69,6 +75,12 @@ Supported operators
     $and 	AND
     $not 	NOT
     $nor 	NOT(... OR ...)
+
+System requirements
+-------------------
+
+Java SE Runtime Environment 8
+
 
 
 
