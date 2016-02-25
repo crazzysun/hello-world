@@ -31,11 +31,11 @@ Move data from mongoDB to PostgreSQL:
 
 Usage
 -----
-###### Build jar
+##### Build jar
 
 		mvn assembly:assembly
 
-###### Run
+##### Run
 		java -jar target/pgmongo.jar
 
 1. Connect to PostgreSQL DB:
