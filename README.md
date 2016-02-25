@@ -3,8 +3,7 @@ PGMongo experimental driver
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 
 An experimental driver that makes a PostgreSQL database appear like a MongoDB database to its customers.
-
-
+Works in interactive mode.
 
 
 Move data from mongoDB to PostgreSQL:
@@ -29,23 +28,31 @@ Move data from mongoDB to PostgreSQL:
 		update [table_name] set _id = json_data->[json_path_to_id]->'_id';
 		alter table [table_name] add primary key (_id);    
 
-Usage
+Usage:
 -----
-##### Build jar
+#### Build jar
 
 		mvn assembly:assembly
 
-##### Run
+#### Run
 		java -jar target/pgmongo.jar
+
+#### All commands:
+		help		show help
+		connect		connection to DB
+			Options:
+			-u			user name
+			-p			password
+			-url		url to db
+			-debug		debug mod on
+		[query]		query to DB
+		exit		close pgmongo driver
+
+#### How to work:
 
 1. Connect to PostgreSQL DB:
 
 		connect -u [user name] -p [password] -url [url_to_db] -debug
-		    Options:
-		-u			user name
-		-p			password
-		-url		url to db
-		-debug		debug mod on
 			
 			
 2. Write requests:
@@ -56,6 +63,9 @@ Usage
 
 4. PROFIT!
 
+5. go to 2.
+
+
 Supported requests:
 -------------------
 
@@ -63,7 +73,7 @@ Supported requests:
 	insert
 	delete
 
-Supported operators
+Supported operators:
 -------------------
 
 ##### Comparison:
@@ -84,7 +94,7 @@ Supported operators
     $not 	NOT
     $nor 	NOT(... OR ...)
 
-System requirements
+System requirements:
 -------------------
 
 - Java SE Runtime Environment 8 or later;
